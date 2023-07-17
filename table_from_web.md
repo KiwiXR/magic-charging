@@ -1,5 +1,5 @@
 # 将多页的网页表格下载为csv
-例如：[https://ngdc.cncb.ac.cn/ictcf/Resource.php](https://ngdc.cncb.ac.cn/ictcf/Resource.php
+例如：[https://ngdc.cncb.ac.cn/ictcf/Resource.php](https://ngdc.cncb.ac.cn/ictcf/Resource.php)
 将以下脚本在浏览器console中执行后可以得到完整的csv表格
 ```javascript
 // Quick and simple export target #table_id into a csv
