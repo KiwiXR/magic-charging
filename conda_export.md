@@ -22,9 +22,9 @@
     conda env update -f env.yml -y
     ```
 + 相同操作系统【使用conda core】
-  + src
+  + src（`-e` 指代 `--export` 而非 `--explicit`）
     ```bash
-    conda list -e > env-list.txt # -e means --export, not --explicit
+    conda list -e > env-list.txt
     ```
   + tgt （新环境，**必须**指定环境名，`--file`**不能**缩写）
     ```bash
