@@ -1,5 +1,5 @@
 # 使用rsync备份目录
-``` shell
+``` bash
 rsync -avzP --copy-unsafe-links /src/path /tgt/path
 ```
 -a: --archive (-rlptgoD) 
@@ -16,3 +16,9 @@ rsync -avzP --copy-unsafe-links /src/path /tgt/path
 -P: --partial --progress 断点续传 + 进度条 \
 --copy-unsafe-links: 当软链接指向文件在同步范围外时拷贝文件，否则拷贝链接
 
+``` bash
+$ rsync -V
+rsync  version 3.2.7  protocol version 31
+Copyright (C) 1996-2022 by Andrew Tridgell, Wayne Davison, and others.
+...
+```
