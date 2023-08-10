@@ -1,5 +1,18 @@
 # 迁移conda环境
 
++ 通用（亦适用于不同平台和操作系统）
+  + src
+    ```bash
+    conda env export > env.yml
+    ```
+  + tgt (new env)
+    ```bash
+    conda env create -f env.yml
+    ```
+  + tgt (existing env)
+    ```bash
+    conda env update -f env.yml -y
+    ```
 + 相同操作系统
   + src
     ```bash
@@ -12,19 +25,6 @@
   + tgt (existing env)
     ```bash
     conda install -f env-list.txt -y
-    ```
-+ 不同平台和操作系统
-  + src
-    ```bash
-    conda env export > env.yml
-    ```
-  + tgt (new env)
-    ```bash
-    conda env create -f env.yml
-    ```
-  + tgt (existing env)
-    ```bash
-    conda env update -f env.yml -y
     ```
 + 相同操作系统（离线）
   + src
