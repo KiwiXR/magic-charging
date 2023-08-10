@@ -78,3 +78,7 @@
 [[zhihu]](https://zhuanlan.zhihu.com/p/87344422) 
 [[csdn1]](https://blog.csdn.net/weixin_43913261/article/details/124687789) 
 [[csdn2]](https://blog.csdn.net/IT_Novice_/article/details/125616956) 
+```bash
+$ conda -V
+conda 22.9.0
+```
