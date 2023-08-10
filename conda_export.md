@@ -26,11 +26,11 @@
     ```bash
     conda list -e > env-list.txt
     ```
-  + tgt （新环境，**必须**指定环境名，`--file`**不能**缩写）
+  + tgt （新环境，**必须**指定环境名，`--file` **不能**缩写）
     ```bash
     conda create -n newname --file env-list.txt
     ```
-  + tgt （旧环境，`--file`**不能**缩写）
+  + tgt （旧环境，`--file` **不能**缩写）
     ```bash
     conda install --file env-list.txt -y
     ```
