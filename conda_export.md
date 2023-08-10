@@ -1,11 +1,19 @@
 # 迁移conda环境
 
-+ 通用（亦适用于不同平台和操作系统）
++ 通用（亦适用于不同平台和操作系统）【使用conda-env】
+  + src（首选，能解决跨OS的build兼容性问题 [[ref]](https://github.com/conda/conda/issues/9399)）
+    ```bash
+    conda env export --no-builds > env.yml
+    ``` 
   + src
     ```bash
     conda env export > env.yml
     ```
-  + tgt (new env)
+  + tgt (new env w/ name)
+    ```bash
+    conda env create -n newname -f env.yml
+    ```
+  + tgt (new env w/o name)
     ```bash
     conda env create -f env.yml
     ```
@@ -13,20 +21,20 @@
     ```bash
     conda env update -f env.yml -y
     ```
-+ 相同操作系统
++ 相同操作系统【使用conda core】
   + src
     ```bash
-    conda list -e > env-list.txt
+    conda list -e > env-list.txt # export
     ```
-  + tgt (new env)
+  + tgt (new env w/ name)
     ```bash
-    conda create -n newname -f env-list.txt
+    conda create -n newname --file env-list.txt
     ```
   + tgt (existing env)
     ```bash
-    conda install -f env-list.txt -y
+    conda install --file env-list.txt -y
     ```
-+ 相同操作系统（离线）
++ 相同操作系统（离线）【使用conda-pack】
   + src
     ```bash
     conda activate base
