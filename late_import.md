@@ -1,7 +1,5 @@
 # late import
 
-## source: [ProDA](https://github.com/microsoft/ProDA/blob/main/data/__init__.py#L12)
-
 ``` python
 def find_dataset_using_name(name):
     """Import the module "data/[dataset_name]_dataset.py".
@@ -25,3 +23,4 @@ def find_dataset_using_name(name):
 
     return dataset
 ```
+[[ProDA]](https://github.com/microsoft/ProDA/blob/main/data/__init__.py#L12)
