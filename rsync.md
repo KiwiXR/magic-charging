@@ -30,6 +30,8 @@ rsync -avzP --exclude={'*foo.jpg','bar/*'} /src/path /tgt/path
 
 注意：exclude或include指定的路径必须是**相对路径**，相对于/src/path
 
+注意：使用 `--files-from` 时会自动取消 `-a` 中的(`-r`)选项，如果包括目录则需要手动添加 `-r` 即 `-avzPr`
+
 For more details:
 ```bash
 $ man rsync
