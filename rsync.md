@@ -16,20 +16,29 @@ rsync -avzP --copy-unsafe-links /src/path /tgt/path
 -P: --partial --progress 断点续传 + 进度条 \
 --copy-unsafe-links: 当软链接指向文件在同步范围外时拷贝文件，否则拷贝链接
 
+```bash
+rsync -avzP --exclude '*foo.jpg' --exclude 'bar/*' /src/path /tgt/path
+```
+```bash
+rsync -avzP --exclude={'*foo.jpg','bar/*'} /src/path /tgt/path
+```
+
 ## --exclude, --exclude-from, --include, --include-from, --files-from
 [[exclude]](https://bobcares.com/blog/rsync-exclude/) 
 [[files-from]](https://stackoverflow.com/questions/16647476/how-to-rsync-only-a-specific-list-of-files)
 [[include exclude patterns]](https://stackoverflow.com/a/48010623)
 
+注意：exclude或include指定的路径必须是**相对路径**，相对于/src/path
+
 For more details:
 ```bash
 $ man rsync
 ```
-in man:
+search for the rules in man:
 ```vim
 /INCLUDE/EXCLUDE PATTERN RULES
 ```
-and the rules show up.
+
 
 ``` bash
 $ rsync -V
