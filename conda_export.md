@@ -44,11 +44,15 @@
   conda env create -f env.yml
   ```
 
+  如果不在默认位置部署，**一定**要加 `-p` 参数！
+
 - tgt （旧环境）
 
   ```bash
   conda env update -f env.yml
   ```
+
+  如果不在默认位置部署，**一定**要加 `-p` 参数！
 
 ## 相同操作系统【使用conda core】
 
