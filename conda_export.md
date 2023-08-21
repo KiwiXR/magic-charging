@@ -47,7 +47,7 @@
 - tgt （旧环境）
 
   ```bash
-  conda env update -f env.yml -y
+  conda env update -f env.yml
   ```
 
 ## 相同操作系统【使用conda core】
