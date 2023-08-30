@@ -12,12 +12,16 @@
     ```bash
     conda env export --no-builds > env.yml
     ```
-    如果不在默认位置部署，**一定**要加 `-p` 参数！
+    如果不在默认位置部署，**不能**使用该方式，应当以 `-p` 参数指定环境路径（前缀）！
 
   - 指定环境
 
     ```bash
     conda env export -n srcname --no-builds > env.yml
+    ```
+  - 指定路径
+    ```bash
+    conda env export -p prefix --no-builds > env.yml
     ```
 
 - src（不跨OS）
@@ -26,12 +30,16 @@
     ```bash
     conda env export > env.yml
     ```
-    如果不在默认位置部署，**一定**要加 `-p` 参数！
+    如果不在默认位置部署，**不能**使用该方式，应当以 `-p` 参数指定环境路径（前缀）！
 
   - 指定环境
 
     ```bash
     conda env export -n srcname > env.yml
+    ```
+  - 指定路径
+    ```bash
+    conda env export -p prefix > env.yml
     ```
 
 - tgt （新环境，指定环境名）
@@ -46,6 +54,9 @@
   conda env create -f env.yml
   ```
   如果不在默认位置部署，**一定**要加 `-p` 参数！
+  ```bash
+  conda env create -p prefix -f env.yml
+  ```
 
 - tgt （旧环境）
 
@@ -53,6 +64,9 @@
   conda env update -f env.yml
   ```
   如果不在默认位置部署，**一定**要加 `-p` 参数！
+  ```bash
+  conda env update -p prefix -f env.yml
+  ```
 
 ## 相同操作系统【使用conda core】
 
