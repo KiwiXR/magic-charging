@@ -13,7 +13,7 @@
 
 ## 前置知识
 
-1. `nvidia-smi`中显示的CUDA Version，其全称为CUDA Driver Version，即当前驱动的版本号，也即当前GPU驱动所支持的最高cuda版本（例外是下面的[小版本兼容](https://github.com/KiwiXR/magic-charging/edit/master/cuda_in_conda.md#%E5%B0%8F%E7%89%88%E6%9C%AC%E9%97%B4%E7%9A%84%E5%85%BC%E5%AE%B9runtime--driver-%E9%9A%8F%E4%BE%BF%E5%85%BC%E5%AE%B9runtime--driver-%E5%A4%A7%E7%89%88%E6%9C%AC%E5%86%85%E5%85%BC%E5%AE%B9)）
+1. `nvidia-smi`中显示的CUDA Version，其全称为CUDA Driver Version，即当前驱动的版本号，也即当前GPU驱动所支持的最高cuda版本（例外是下面的[小版本兼容](#小版本间的兼容runtime--driver-随便兼容runtime--driver-大版本内兼容)）
 2. `nvidia-smi`是driver API
 3. `nvcc -V`中显示的是CUDA Runtime Version，即使用当前nvcc编译器，所得到的应用程序需要基于的runtime版本号
 4. `torch.version.cuda`显示的是用于运行该torch时所需要的CUDA Runtime Version（即编译时所用nvcc版本）
@@ -36,7 +36,7 @@ pip install torch==1.11.0+cu113 torchvision==0.12.0+cu113 torchaudio==0.11.0 --e
 
 这里面，conda额外安装的cudatoolkit就包含了cuda runtime，而pip安装的torch==1.11.0+cu113中也已经捆绑安装了cuda runtime，因此torch的运行时环境是完整的，不需要额外装cuda(nvcc)
 
-### 在 conda 环境中安装特定版本的 nvcc 用于编译（必须满足[cuda runtime 和 cuda driver 兼容性](https://github.com/KiwiXR/magic-charging/edit/master/cuda_in_conda.md#cuda-runtime-%E5%92%8C-cuda-driver-%E5%85%BC%E5%AE%B9%E6%80%A7)中的要求）
+### 在 conda 环境中安装特定版本的 nvcc 用于编译（必须满足[cuda runtime 和 cuda driver 兼容性](#cuda-runtime-和-cuda-driver-兼容性)中的要求）
 
 常见需求如从源码编译安装 detectron2 等：`python -m pip install 'git+https://github.com/MaureenZOU/detectron2-xyz.git'`
 
