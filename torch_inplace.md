@@ -3,3 +3,7 @@
 https://discuss.pytorch.org/t/when-inplace-operation-are-allowed-and-when-not/169583
 
 https://lernapparat.de/pytorch-inplace
+
+``` python
+torch.autograd.set_detect_anomaly(True)
+```
