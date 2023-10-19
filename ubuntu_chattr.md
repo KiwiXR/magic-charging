@@ -1,10 +1,14 @@
 # Ubuntu太老并且在apt时提示dpkg backup没权限
 
+## 报错关键信息
+
 ```shell
 dpkg: error processing archive /var/cache/apt/archives/e2fsprogs_1.44.1-1ubuntu1.4_amd64.deb (--unpack):
  unable to make backup link of './usr/bin/chattr' before installing new version: Operation not permitted
 ```
 这可能是因为系统自带的chattr坏了！
+
+## 解决方案
 
 https://blog.csdn.net/Haulyn5/article/details/127495565
 
@@ -14,8 +18,8 @@ https://blog.csdn.net/Haulyn5/article/details/127495565
 1. 在 https://launchpad.net/ubuntu/ 进行搜索 e2fsprogs
 2. 点开搜索结果，进入 https://launchpad.net/ubuntu/+source/e2fsprogs 页面
 3. 点开页面下方的 1.44.1-1ubuntu1.4 链接
-4. 在右侧builds中点amd64
-5. 在下方built-files里面找到e2fsprogs_1.44.1-1ubuntu1.4_amd64.deb并获取下载链接（如上）
+4. 在右侧 builds 中点 amd64
+5. 在下方 built-files 里面找到 e2fsprogs_1.44.1-1ubuntu1.4_amd64.deb 并获取下载链接（如上）
 
 解压方式为：
 ```shell
@@ -31,8 +35,7 @@ mv /usr/bin/chattr /usr/bin/chattr.bak
 mv /usr/bin/lsattr /usr/bin/lsattr.bak
 ```
 
-
-报错内容示例：
+## 报错详细内容示例
 ```shell
 sudo apt --fix-broken install
 Reading package lists... Done
