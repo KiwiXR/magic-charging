@@ -10,8 +10,11 @@ dpkg: error processing archive /var/cache/apt/archives/e2fsprogs_1.44.1-1ubuntu1
 
 ## 解决方案
 
-下载对应版本e2fsprogs的deb包，解压后使用里面的usr/bin/chattr来设置原本的chattr和lsattr，并将它们移除（备份）
-例如，Ubuntu 18.04对应的deb可以在 https://launchpad.net/~ubuntu-security-proposed/+archive/ubuntu/ppa/+build/23812170/+files/e2fsprogs_1.44.1-1ubuntu1.4_amd64.deb 下载，
+### 思路
+下载对应版本 e2fsprogs 的 deb 包，解压后使用里面的 usr/bin/chattr 来设置原本的 chattr 和 lsattr，并将它们移除（备份）以避免错误发生
+
+### 操作
+例如，Ubuntu 18.04 对应的 deb 可以在 https://launchpad.net/~ubuntu-security-proposed/+archive/ubuntu/ppa/+build/23812170/+files/e2fsprogs_1.44.1-1ubuntu1.4_amd64.deb 下载，
 寻找方式为：
 1. 在 https://launchpad.net/ubuntu/ 进行搜索 e2fsprogs
 2. 点开搜索结果，进入 https://launchpad.net/ubuntu/+source/e2fsprogs 页面
