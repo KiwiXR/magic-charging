@@ -27,6 +27,10 @@ dpkg: error processing archive /var/cache/apt/archives/openssh-server_1%3a7.6p1-
 4. 在右侧 builds 中点 amd64
 5. 在下方 built-files 里面找到 e2fsprogs_1.44.1-1ubuntu1.4_amd64.deb 并获取下载链接（如上）
 
+下载该 deb 包：
+```shell
+wget https://launchpad.net/~ubuntu-security-proposed/+archive/ubuntu/ppa/+build/23812170/+files/e2fsprogs_1.44.1-1ubuntu1.4_amd64.deb
+```
 解压方式为：
 ```shell
 mkdir extracted
