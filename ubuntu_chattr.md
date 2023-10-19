@@ -2,23 +2,26 @@
 
 ## 报错关键信息
 
+情形1：
 ```shell
 dpkg: error processing archive /var/cache/apt/archives/e2fsprogs_1.44.1-1ubuntu1.4_amd64.deb (--unpack):
  unable to make backup link of './usr/bin/chattr' before installing new version: Operation not permitted
 ```
-
+情形2：
 ```shell
 dpkg: error processing archive /var/cache/apt/archives/openssh-server_1%3a7.6p1-4ubuntu0.7_amd64.deb (--unpack):
  unable to make backup link of './usr/sbin/sshd' before installing new version: Operation not permitted
 ```
-这可能是因为系统自带的chattr坏了！
+前者可能是因为系统自带的chattr坏了，而后者则是需要chattr来取消访问限制！
 
 ## 解决方案
 
-### 思路
+### 情形1：chattr坏了
+
+#### 思路
 下载对应版本 e2fsprogs 的 deb 包，解压后使用里面的 usr/bin/chattr 来设置原本的 chattr 和 lsattr，并将它们移除（备份）以避免错误发生
 
-### 操作
+#### 操作
 例如，Ubuntu 18.04 对应的 deb 可以在 https://launchpad.net/~ubuntu-security-proposed/+archive/ubuntu/ppa/+build/23812170/+files/e2fsprogs_1.44.1-1ubuntu1.4_amd64.deb 下载，
 寻找方式为：
 1. 在 https://launchpad.net/ubuntu/ 进行搜索 e2fsprogs
@@ -44,7 +47,9 @@ cd extracted/usr/bin
 mv /usr/bin/chattr /usr/bin/chattr.bak
 mv /usr/bin/lsattr /usr/bin/lsattr.bak
 ```
-如果遇到其它可执行文件也发生backup错误，例如 `unable to make backup link of './usr/sbin/sshd' before installing new version: Operation not permitted`，则可如下操作：
+
+### 情形2：chattr之外的文件访问限制
+如果遇到其它可执行文件也发生backup错误，且系统自带的chattr没有问题，例如 `unable to make backup link of './usr/sbin/sshd' before installing new version: Operation not permitted`，则可如下操作：
 ```shell
 chattr -ia /usr/sbin/sshd
 ```
