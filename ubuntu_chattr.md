@@ -6,6 +6,11 @@
 dpkg: error processing archive /var/cache/apt/archives/e2fsprogs_1.44.1-1ubuntu1.4_amd64.deb (--unpack):
  unable to make backup link of './usr/bin/chattr' before installing new version: Operation not permitted
 ```
+
+```shell
+dpkg: error processing archive /var/cache/apt/archives/openssh-server_1%3a7.6p1-4ubuntu0.7_amd64.deb (--unpack):
+ unable to make backup link of './usr/sbin/sshd' before installing new version: Operation not permitted
+```
 这可能是因为系统自带的chattr坏了！
 
 ## 解决方案
