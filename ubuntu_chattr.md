@@ -23,7 +23,7 @@ dpkg: error processing archive /var/cache/apt/archives/openssh-server_1%3a7.6p1-
 寻找方式为：
 1. 在 https://launchpad.net/ubuntu/ 进行搜索 e2fsprogs
 2. 点开搜索结果，进入 https://launchpad.net/ubuntu/+source/e2fsprogs 页面
-3. 点开页面下方的 1.44.1-1ubuntu1.4 链接
+3. 点开页面下方的 1.44.1-1ubuntu1.4 链接（即对应 Ubuntu 18.04 LTS 的代号 The Bionic Beaver 一栏下链接）
 4. 在右侧 builds 中点 amd64
 5. 在下方 built-files 里面找到 e2fsprogs_1.44.1-1ubuntu1.4_amd64.deb 并获取下载链接（如上）
 
