@@ -40,6 +40,10 @@ cd extracted/usr/bin
 mv /usr/bin/chattr /usr/bin/chattr.bak
 mv /usr/bin/lsattr /usr/bin/lsattr.bak
 ```
+如果遇到其它可执行文件也发生backup错误，例如 `unable to make backup link of './usr/sbin/sshd' before installing new version: Operation not permitted`，则可如下操作：
+```shell
+chattr -ia /usr/sbin/sshd
+```
 
 > 参考：https://blog.csdn.net/Haulyn5/article/details/127495565
 
