@@ -12,11 +12,13 @@ dpkg: error processing archive /var/cache/apt/archives/e2fsprogs_1.44.1-1ubuntu1
 dpkg: error processing archive /var/cache/apt/archives/openssh-server_1%3a7.6p1-4ubuntu0.7_amd64.deb (--unpack):
  unable to make backup link of './usr/sbin/sshd' before installing new version: Operation not permitted
 ```
-前者可能是因为系统自带的chattr坏了，而后者则是需要chattr来取消访问限制！
+前者可能是因为系统自带的 chattr 坏了，而后者则是需要 chattr 来取消访问限制！
 
 ## 解决方案
 
 ### 情形1：chattr坏了
+
+一般是需要升级系统自带的 chattr，却无法取消其自身的访问限制
 
 #### 思路
 下载对应版本 e2fsprogs 的 deb 包，解压后使用里面的 usr/bin/chattr 来设置原本的 chattr 和 lsattr，并将它们移除（备份）以避免错误发生
