@@ -1,4 +1,10 @@
-# Ubuntu太老并且在apt时提示chattr没权限
+# Ubuntu太老并且在apt时提示dpkg backup没权限
+
+```shell
+dpkg: error processing archive /var/cache/apt/archives/e2fsprogs_1.44.1-1ubuntu1.4_amd64.deb (--unpack):
+ unable to make backup link of './usr/bin/chattr' before installing new version: Operation not permitted
+```
+这可能是因为系统自带的chattr坏了！
 
 https://blog.csdn.net/Haulyn5/article/details/127495565
 
