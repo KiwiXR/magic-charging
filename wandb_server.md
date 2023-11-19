@@ -1,5 +1,6 @@
 # wandb local server常见问题
 
+> https://docs.wandb.ai/guides/hosting/how-to-guides/basic-setup
 > https://idzc.top/article/202301301600
 
 ## 在自定义位置启用wandb server的存储
