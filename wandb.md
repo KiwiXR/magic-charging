@@ -42,3 +42,9 @@ main.main()
 	/mnt/ramdisk/core/services/local/cmd/local/main.go:740 +0x78
 If this error persists, please contact support@wandb.com and include the message above.
 ```
+
+# 重启docker容器
+
+```shell
+docker restart wandb-local
+```
