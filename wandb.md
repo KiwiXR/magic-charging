@@ -1,5 +1,7 @@
 # wandb local server常见问题
 
+> https://idzc.top/article/202301301600
+
 ## 在自定义位置启用wandb server的存储
 
 > https://github.com/wandb/server/issues/89#issuecomment-1291412131
