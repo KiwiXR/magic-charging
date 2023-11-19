@@ -1,4 +1,6 @@
-# 在自定义位置启用wandb server的存储
+# wandb local server常见问题
+
+## 在自定义位置启用wandb server的存储
 
 > https://github.com/wandb/server/issues/89#issuecomment-1291412131
 
@@ -17,7 +19,7 @@ docker run --rm -d -v /home/wandb-local:/vol -p 8080:8080 --name wandb-local wan
 
 `--name` 为容器名，不能重复
 
-# 首次启动wandb server时报错
+## 首次启动wandb server时报错
 
 > https://github.com/wandb/wandb/issues/2941#issuecomment-974269715
 
@@ -43,7 +45,15 @@ main.main()
 If this error persists, please contact support@wandb.com and include the message above.
 ```
 
-# 重启docker容器
+## docker容器相关操作
+
+进入容器
+
+```shell
+docker exec -it wandb-local /bin/bash
+```
+
+重启容器
 
 ```shell
 docker restart wandb-local
