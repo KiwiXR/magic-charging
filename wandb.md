@@ -21,7 +21,7 @@ docker run --rm -d -v /home/wandb-local:/vol -p 8080:8080 --name wandb-local wan
 
 > https://github.com/wandb/wandb/issues/2941#issuecomment-974269715
 
-可能的原因是权限不够，必要时使用sudo：
+可能的原因是权限不够：
 
 ```shell
 chgrp -R 0 /home/wandb-local
