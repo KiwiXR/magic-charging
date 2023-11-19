@@ -45,12 +45,22 @@ main.main()
 If this error persists, please contact support@wandb.com and include the message above.
 ```
 
+## 卡在Loading your local environment...
+
+至少等分钟
+
 ## docker容器相关操作
 
-进入容器
+交互式进入容器
 
 ```shell
 docker exec -it wandb-local /bin/bash
+```
+
+退出交互式界面且不关闭容器
+
+```shell
+Ctrl+P Ctrl+Q
 ```
 
 重启容器
