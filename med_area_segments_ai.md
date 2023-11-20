@@ -1,8 +1,57 @@
 # 使用segments.ai替代面积法
 
+## 环境配置
+
+```shell
+pip install tqdm segments-ai Pillow numpy
+```
+
 ## 预处理
 
 预处理图片为png格式，最好为单通道（灰度图）
+
+convert.py
+```python
+import argparse
+import os
+from PIL import Image
+from tqdm import tqdm
+
+def convert_tiff_to_png(input_folder, output_folder):
+    # Create the output folder if it doesn't exist
+    os.makedirs(output_folder, exist_ok=True)
+
+    # Get a list of TIFF files in the input folder
+    tiff_files = [f for f in os.listdir(input_folder) if f.endswith('.tiff') or f.endswith('.tif')]
+
+    for tiff_file in tqdm(tiff_files):
+        # Construct the input and output file paths
+        input_path = os.path.join(input_folder, tiff_file)
+        output_path = os.path.join(output_folder, os.path.splitext(tiff_file)[0] + '.png')
+
+        # Open the TIFF image using Pillow
+        tiff_image = Image.open(input_path)
+
+        # Save the image as PNG
+        tiff_image.save(output_path, format='PNG')
+
+        #print(f"Converted {tiff_file} to {os.path.basename(output_path)}")
+
+if __name__ == "__main__":
+    # Specify the input and output folders
+    parser = argparse.ArgumentParser('A Simple Parser')
+    parser.add_argument('-s', '--source', type=str, required=True, help='path to tiff images')
+    parser.add_argument('-t', '--target', type=str, required=True, help='path to png images')
+    args = parser.parse_args()
+
+    # Convert TIFF to PNG
+    convert_tiff_to_png(args.source, args.target)
+```
+
+命令行
+```shell
+python convert.py -s /path/to/tiff/images/ -t /path/to/png/images/
+```
 
 ## 标注和发布
 
@@ -14,13 +63,6 @@
 4. 在Releases菜单栏下发布数据集（此处假定版本号为v0.0）
 
 ## 导出数据集
-
-### 配置python环境
-
-命令行
-```shell
-pip install segments-ai
-```
 
 ### 下载数据集
 
@@ -56,6 +98,7 @@ import argparse
 from PIL import Image
 import numpy as np
 import csv
+from tqdm import tqdm
 
 
 def findAllFile(base, suffix):
@@ -72,9 +115,9 @@ def main():
     parser.add_argument('-s', '--suffix', type=str, help='suffix of label files', default='_label_ground-truth_semantic.png')
     parser.add_argument('-o', '--output', type=str, help='output file path', default='result.csv')
     args = parser.parse_args()
-    
+
     results = []
-    for path in findAllFile(args.root, args.suffix):
+    for path in tqdm(findAllFile(args.root, args.suffix)):
         img = Image.open(path)
         img = np.asarray(img)
         tot_pix = np.prod(img.shape)
@@ -82,7 +125,7 @@ def main():
         # assemble results dict
         result = dict(image_name=os.path.basename(path).replace(args.suffix, '.png'), labeled_area=lbl_pix, total_area=tot_pix)
         results.append(result)
-    
+
     with open(args.output, 'w', newline='') as csvfile:
         fieldnames = ['image_name', 'labeled_area', 'total_area']
         writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
