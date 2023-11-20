@@ -2,6 +2,7 @@
 
 ## 环境配置
 
+命令行
 ```shell
 pip install tqdm segments-ai Pillow numpy
 ```
