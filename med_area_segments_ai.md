@@ -17,6 +17,7 @@
 
 ### 配置python环境
 
+命令行
 ```shell
 pip install segments-ai
 ```
@@ -39,6 +40,7 @@ dataset = SegmentsDataset(release, labelset='ground-truth', filter_by=['labeled'
 export_dataset(dataset, export_format='semantic')
 ```
 
+命令行
 ```shell
 python download.py
 ```
@@ -95,6 +97,7 @@ if __name__ == '__main__':
 
 指定数据集路径，标签后缀（默认）和输出csv文件名或路径（默认）
 
+命令行
 ```shell
 python solve.py segments/username_datasetname/v0.0/
 ```
