@@ -1,5 +1,15 @@
 # Diffusers相关
 
+# 下载模型
+
+```python
+from huggingface_hub import snapshot_download
+
+repo_id = "runwayml/stable-diffusion-v1-5"
+
+snapshot_download(repo_id, ignore_patterns=["*.msgpack", "*.h5", "*onnx*"], resume_download=True)
+```
+
 ## 如何离线加载模型
 + 使用 `HF_HUB_OFFLINE=1`
   + 方便，作为环境变量生效
