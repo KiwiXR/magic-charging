@@ -4,7 +4,7 @@
 
 命令行
 ```shell
-pip install tqdm segments-ai Pillow numpy
+pip install tqdm segments-ai Pillow numpy scikit-image
 ```
 
 ## 预处理
