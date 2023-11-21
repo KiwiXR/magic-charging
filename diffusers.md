@@ -2,6 +2,8 @@
 
 # 下载模型
 
+> https://huggingface.co/docs/huggingface_hub/guides/download
+
 ```python
 from huggingface_hub import snapshot_download
 
