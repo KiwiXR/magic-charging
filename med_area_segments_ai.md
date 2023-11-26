@@ -40,6 +40,8 @@ pip install tqdm segments-ai Pillow numpy scikit-image
 
 预处理图片为png格式，最好为单通道（灰度图）
 
+以下python代码功能为，将tiff格式的单通道图片转换为png格式：
+
 convert.py
 ```python
 import argparse
@@ -78,10 +80,35 @@ if __name__ == "__main__":
     convert_tiff_to_png(args.source, args.target)
 ```
 
+以下代码实际执行转换：
+
 命令行
 ```shell
 python convert.py -s /path/to/tiff/images/ -t /path/to/png/images/
 ```
+
+注：此处的`/path/to/tiff/images/`和`/path/to/png/images/`都是占位符！
+
+实际使用时（Windows下，会用Linux就不用往下看了），例如图片文件夹在`D:\tiff图片\`，而希望保存到`D:\png图片\`，此时**不需要**创建`D:\png图片\`文件夹。
+
+实际执行的命令为（如果路径中含有空格，则使用**英文双引号**将路径包含，例如`"D:\tiff 图片"`）：
+
+命令行
+```shell
+python convert.py -s D:\tiff图片\ -t D:\png图片\
+```
+
+此时，转换完成的png图片将会保存到`D:\png图片\`文件夹下。
+
+也可以使用相对路径，即相对于代码执行位置的路径。
+
+例如假设当前在E盘下`E:\`，执行：
+
+命令行
+```shell
+python convert.py -s D:\tiff图片\ -t png图片
+```
+执行完成后，转换完成的png图片将会保存到`E:\png图片\`文件夹下。
 
 ## 标注和发布
 
@@ -100,7 +127,7 @@ python convert.py -s /path/to/tiff/images/ -t /path/to/png/images/
 
 > https://docs.segments.ai/how-to-integrate/export/exporting-the-release-file-to-different-formats
 
-以下为python代码
+以下为python代码，在使用前根据注释修改**所有需要的内容**！
 
 download.py
 ```python
@@ -109,7 +136,7 @@ from segments.utils import export_dataset
 
 client = SegmentsClient('api_key')  # 此处替换为自己的API Key，位于Settings->API Keys
 release = client.get_release('username/datasetname', 'v0.0')  # 此处替换为自己的username，dataset name，版本号
-dataset = SegmentsDataset(release, labelset='ground-truth', filter_by=['labeled'])
+dataset = SegmentsDataset(release, labelset='ground-truth', filter_by=['labeled','reviewed'])
 
 export_dataset(dataset, export_format='semantic')
 ```
