@@ -217,3 +217,14 @@ csv文件内容范例为：
 
 
 DONE！
+
+## 一些lzw需要学习的小知识
++ 路径相关
+  + https://zhuanlan.zhihu.com/p/85455028
+  > 注意 CMD 和 PowerShell 是 Windows 下的两种不同的命令行终端，后者功能更强大
++ conda相关
+  + https://zhuanlan.zhihu.com/p/483716942
+  + https://zhuanlan.zhihu.com/p/618068275
++ 文件格式和后缀
+  + Windows 辨别文件为什么一定要扩展名？感觉 Linux 上要求就没有这么高？ - invalid s的回答 - 知乎 https://www.zhihu.com/question/62087216/answer/2906289897
+
