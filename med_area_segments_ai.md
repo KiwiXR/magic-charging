@@ -117,7 +117,8 @@ python convert.py -s D:\tiff图片\ -t png图片
 1. 在segments.ai上创建数据集（选择Medical，Image，segmentation-bitmap）
 2. 将预处理完的图片上传到segments.ai
 3. 使用segments.ai创建标签并保存，注意标签id默认为1（此时状态应该为Labeled）
-4. 在Releases菜单栏下发布数据集（此处假定版本号为v0.0）
+   > 提示Failed to load image？在Chrome浏览器中的解决办法为：`F12打开控制台，在左上角刷新按钮上右键->硬性重新加载`
+5. 在Releases菜单栏下发布数据集（此处假定版本号为v0.0）
 
 ## 导出数据集
 
