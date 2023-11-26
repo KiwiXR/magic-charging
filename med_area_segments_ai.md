@@ -4,7 +4,7 @@
 
 **强烈建议使用conda配置环境**
 
-#### 创建环境（只要做一次）
+### 创建环境（只要做一次）
 
 命令行
 ```shell
@@ -12,18 +12,22 @@ conda create -n med -y python
 ```
 这里`-n`后面的`med`是环境的名字，如果环境名另起，则在下面把`med`全部替换为新的名称
 
-#### 激活环境（每次使用下面所有代码之前，每次使用下面所有代码之前，每次使用下面所有代码之前）
+### 激活环境（每次使用下面任意代码之前，每次使用下面任意代码之前，每次使用下面任意代码之前）
+
+激活环境（每次）
 
 命令行
 ```shell
 conda activate med
 ```
 
-注：需要查看当前所有conda环境时，使用
+> 注：需要查看当前所有conda环境时，使用
 命令行
 ```shell
 conda env list
 ```
+
+安装需要的包（只要做一次）
 
 命令行
 ```shell
@@ -31,6 +35,8 @@ pip install tqdm segments-ai Pillow numpy scikit-image
 ```
 
 ## 预处理
+
+**需要先激活环境！**
 
 预处理图片为png格式，最好为单通道（灰度图）
 
@@ -87,6 +93,8 @@ python convert.py -s /path/to/tiff/images/ -t /path/to/png/images/
 4. 在Releases菜单栏下发布数据集（此处假定版本号为v0.0）
 
 ## 导出数据集
+
+**需要先激活环境！**
 
 ### 下载数据集
 
