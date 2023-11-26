@@ -10,7 +10,14 @@
 ```shell
 conda create -n med -y python
 ```
-这里`-n`后面的`med`是环境的名字，如果环境名另起，则在下面把`med`全部替换为新的名称
+这里 `-n` 后面的 `med` 是环境的名字，如果环境名另起，则在下面把 `med` 全部**替换为新的名称**
+
+### 安装需要的包（只要做一次）
+
+命令行
+```shell
+pip install tqdm segments-ai Pillow numpy scikit-image
+```
 
 ### 激活环境（_每次使用下面任意代码之前，每次使用下面任意代码之前，每次使用下面任意代码之前_）
 
@@ -21,26 +28,18 @@ conda create -n med -y python
 conda activate med
 ```
 
-> 注：需要查看当前所有conda环境时，使用
-命令行
-```shell
-conda env list
-```
-
-安装需要的包（只要做一次）
-
-命令行
-```shell
-pip install tqdm segments-ai Pillow numpy scikit-image
-```
+> 注：需要查看当前所有conda环境时，使用 命令行
+>```shell
+>conda env list
+>```
 
 ## 预处理
 
-**需要先激活环境！**
+_**需要先激活环境！**_
 
 预处理图片为png格式，最好为单通道（灰度图）
 
-以下python代码功能为，将tiff格式的单通道图片转换为png格式：
+以下python代码功能为，将tiff格式的单通道图片转换为png格式，注意改代码只处理直接目录下的图片，不递归处理：
 
 convert.py
 ```python
@@ -123,7 +122,7 @@ python convert.py -s D:\tiff图片\ -t png图片
 
 ## 导出数据集
 
-**需要先激活环境！**
+_**需要先激活环境！**_
 
 ### 下载数据集
 
@@ -150,7 +149,7 @@ python download.py
 
 ## 统计面积
 
-**需要先激活环境！**
+_**需要先激活环境！**_
 
 以下python代码统计每张标签中的总像素数、标注像素数并与原图片文件名一同保存到csv文件中
 
