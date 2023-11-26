@@ -2,6 +2,29 @@
 
 ## 环境配置
 
+**强烈建议使用conda配置环境**
+
+#### 创建环境
+
+命令行
+```shell
+conda create -n med -y python
+```
+这里`-n`后面的`med`是环境的名字，如果环境名另起，则在下面把`med`全部替换为新的名称
+
+#### 激活环境
+
+命令行
+```shell
+conda activate med
+```
+
+注：需要查看当前所有conda环境时，使用
+命令行
+```shell
+conda env list
+```
+
 命令行
 ```shell
 pip install tqdm segments-ai Pillow numpy scikit-image
