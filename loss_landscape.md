@@ -108,7 +108,7 @@ git clone git@github.com:tomgoldstein/loss-landscape.git
 
 
 
-从作者提供的google网盘下载VGG-9和ResNet-56的tar包，放置于 `cifar10/trained_nets` 路径并解压
+从作者提供的google网盘下载[VGG-9](https://drive.google.com/open?id=1jikD79HGbp6mN1qSGojsXOZEM5VAq3tH)和[ResNet-56](https://drive.google.com/a/cs.umd.edu/file/d/12oxkvfaKcPyyHiOevVNTBzaQ1zAFlNPX/view?usp=sharing)的tar包，放置于 `cifar10/trained_nets` 路径并解压
 
 ```shell
 tar -zxvf vgg9.tar.gz
