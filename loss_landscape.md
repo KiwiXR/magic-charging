@@ -105,7 +105,7 @@ mpirun --version
 scikit-learn=0.24.2中包含了scipy=0.19.1，[参考](https://pypi.org/project/scikit-learn/0.24.2/)
 
 ```shell
-pip install mpi4py==2.0.0 numpy==1.15.1 h5py==2.7.0 matplotlib==2.0.2 scikit-learn==0.24.2 seaborn==0.9.1 pandas==1.0.5
+pip install mpi4py==2.0.0 numpy==1.15.1 h5py==2.7.0 matplotlib==2.0.2 scikit-learn==0.24.2 scipy==0.19.1 seaborn==0.9.1 pandas==1.0.5
 ```
 
 ## Replicate Examples
