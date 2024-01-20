@@ -178,7 +178,7 @@ python plot_2D.py --surf_file cifar10/trained_nets/resnet56_sgd_lr=0.1_bs=128_wd
 
 ### Visualizing 3D loss surface
 
-得到的h5文件还可以转为vtp文件格式，这一格式可以用 [ParaView](http://paraview.org/) 查看和保存图像，详见原仓库
+得到的h5文件还可以转为vtp文件格式，这一格式可以用 [ParaView](http://paraview.org/) 查看、**旋转**和保存图像，详见原仓库
 
 ```shell
 python h52vtp.py --surf_file path_to_surf_file --surf_name train_loss --zmax 10 --log
