@@ -7,9 +7,10 @@
 ## loss-landscape用途 TL;DR
 
 1. flatness/sharpness: 由该论文（即该仓库）定义的 loss-landscape 越 sharp，（在测试集上）的 generalization 能力越差
+   > 见论文 Fig. 3
    > Using the filter-normalized plots in Figure 3, we can make side-by-side comparisons between minimizers, and we see that now sharpness correlates well with generalization error. Large batches produced visually sharper minima (although not dramatically so) with higher test error.
-2. loss-landscape 越具有凸性（Convexity），模型越容易优化
-   > 见论文Fig. 5
+3. loss-landscape 越具有凸性（Convexity），模型越容易优化
+   > 见论文 Fig. 5
 
 [loss-landscape](https://github.com/tomgoldstein/loss-landscape) 库是一个上古可视化工具，但是它还算好（neng）用，所以本文试图把它挖出来考古。
 
