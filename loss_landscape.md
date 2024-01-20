@@ -20,7 +20,7 @@ https://github.com/voidf/loss-landscape
 + torch=1.10.2+cu111
 + openmpi=3.1.2
 + mpi4py=2.0.0
-+ numpy=1.15.1
++ numpy=1.15.1 (1.17 tested-ok)
 + h5py=2.7.0
 + matplotlib=2.0.2
 + scipy=0.19.1
