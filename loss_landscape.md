@@ -114,3 +114,33 @@ git clone git@github.com:tomgoldstein/loss-landscape.git
 tar -zxvf vgg9.tar.gz
 tar -zxvf resnet56.tar.gz
 ```
+
+### Visualizing 1D loss curve
+
+#### Creating 1D linear interpolations
+
+该实验可以直接复现，故省略过程。需要注意的是，结果文件输出在 `model_file` 和 `model_file2` 的最近公共目录（类比最近公共祖先），存在 `model_file3` 时则是与前述输出路径比较。
+
+#### Producing plots along random normalized directions
+
+由于下载的文件中已经生成了h5文件，所以直接执行部分实验时会被跳过，为了完整复现实验，可以重新建立实验目录
+
+```shell
+mkdir -p cifar10/trained_nets/tmp/
+cd cifar10/trained_nets/tmp/
+cp ../vgg9_sgd_lr=0.1_bs=128_wd=0.0_save_epoch=1/model_300.t7 ./
+# reproduce
+mpirun -n 4 python plot_surface.py --mpi --cuda --model vgg9 --x=-1:1:51 \
+--model_file cifar10/trained_nets/tmp/model_300.t7 \
+--dir_type weights --xnorm filter --xignore biasbn --plot
+```
+
+运行完毕后，在目录 `cifar10/trained_nets/tmp/` 下会多出5个文件，两个h5文件和三个pdf文件。其中
++ `model_300.t7_weights_xignore=biasbn_xnorm=filter.h5` 是direction文件，表示模型参数扰动的方向
++ `model_300.t7_weights_xignore=biasbn_xnorm=filter.h5_[-1.0,1.0,51].h5` 是surface文件，表示模型扰动后形成的loss landscape，可视化用的就是该文件
++ `model_300.t7_weights_xignore=biasbn_xnorm=filter.h5_[-1.0,1.0,51].h5_1d_loss_acc.pdf` 是可视化文件，同时可视化了loss和accuracy（train还是split由`crunch`函数调用时决定），横轴为参数扰动的程度（direction文件的方向为正方向）
++ `model_300.t7_weights_xignore=biasbn_xnorm=filter.h5_[-1.0,1.0,51].h5_1d_train_err.pdf` 是可视化文件，可视化了train err
++ `model_300.t7_weights_xignore=biasbn_xnorm=filter.h5_[-1.0,1.0,51].h5_1d_train_loss.pdf` 是可视化文件，可视化了train loss
+
+
+
