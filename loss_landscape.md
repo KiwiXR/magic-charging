@@ -19,9 +19,7 @@
 + matplotlib=2.0.2
 + scipy=0.19
 
-
-
-## Steps
+## Setup Steps
 
 ### 1. python=3.6
 
@@ -88,3 +86,13 @@ mpirun --version
 ```shell
 pip install mpi4py==2.0.0 numpy==1.15.1 h5py==2.7.0 matplotlib==2.0.2 scipy==0.19
 ```
+
+## Replicate Examples
+
+本节复现[原仓库](https://github.com/tomgoldstein/loss-landscape)的结果
+
+```shell
+git clone git@github.com:tomgoldstein/loss-landscape.git
+```
+
+从作者提供的google网盘下载VGG-9和ResNet-56的tar包，放置于 `cifar10/trained_nets` 路径
