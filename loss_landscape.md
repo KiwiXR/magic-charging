@@ -8,6 +8,12 @@
 
 注意：本文对python包版本的要求与原仓库**和而不同**，版本的选择完全遵循个人美学。
 
+## Forks
+
+其他一些看起来promising的forks
+
+https://github.com/voidf/loss-landscape
+
 ## Requirements
 
 + python=3.6
