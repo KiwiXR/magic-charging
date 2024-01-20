@@ -4,7 +4,7 @@
 > 
 > https://github.com/tomgoldstein/loss-landscape
 
-## loss-landscape用途TL;DR：
+## loss-landscape用途 TL;DR
 
 1. flatness/sharpness: 由该论文（即该仓库）定义的 loss-landscape 越 sharp，（在测试集上）的 generalization 能力越差
    > Using the filter-normalized plots in Figure 3, we can make side-by-side comparisons between minimizers, and we see that now sharpness correlates well with generalization error. Large batches produced visually sharper minima (although not dramatically so) with higher test error.
