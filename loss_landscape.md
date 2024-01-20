@@ -162,7 +162,7 @@ mpirun -n 4 python plot_surface.py --mpi --cuda --model resnet56 --x=-1:1:51 --y
 --dir_type weights --xnorm filter --xignore biasbn --ynorm filter --yignore biasbn --plot
 ```
 
-生成的文件中由两个h5文件、四个pdf文件
+生成的文件中有两个h5文件、四个pdf文件
 + `model_300.t7_weights_xignore=biasbn_xnorm=filter_yignore=biasbn_ynorm=filter.h5` 是direction文件
 + `model_300.t7_weights_xignore=biasbn_xnorm=filter_yignore=biasbn_ynorm=filter.h5_[-1.0,1.0,51]x[-1.0,1.0,51].h5` 是surface文件
 + `model_300.t7_weights_xignore=biasbn_xnorm=filter_yignore=biasbn_ynorm=filter.h5_[-1.0,1.0,51]x[-1.0,1.0,51].h5_train_loss_2dcontour.pdf` 以2D等高线方式可视化
