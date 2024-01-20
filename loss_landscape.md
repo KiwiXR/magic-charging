@@ -159,3 +159,17 @@ mpirun -n 4 python plot_surface.py --mpi --cuda --model resnet56 --x=-1:1:51 --y
 + `model_300.t7_weights_xignore=biasbn_xnorm=filter_yignore=biasbn_ynorm=filter.h5_[-1.0,1.0,51]x[-1.0,1.0,51].h5_train_loss_2dcontourf.pdf` 以2D填充的等高线方式可视化
 + `model_300.t7_weights_xignore=biasbn_xnorm=filter_yignore=biasbn_ynorm=filter.h5_[-1.0,1.0,51]x[-1.0,1.0,51].h5_train_loss_2dheat.pdf` 以热力图方式可视化
 + `model_300.t7_weights_xignore=biasbn_xnorm=filter_yignore=biasbn_ynorm=filter.h5_[-1.0,1.0,51]x[-1.0,1.0,51].h5_train_loss_3dsurface.pdf` 使用matplotlib实现简单的3D可视化
+
+得到surface的h5文件后，可以进一步控制可视化结果，详见原仓库
+
+```shell
+python plot_2D.py --surf_file cifar10/trained_nets/resnet56_sgd_lr=0.1_bs=128_wd=0.0005/model_300.t7_weights_xignore=biasbn_xnorm=filter_yignore=biasbn_ynorm=filter.h5_[-1.0,1.0,51]x[-1.0,1.0,51].h5 --surf_name train_loss
+```
+
+### Visualizing 3D loss surface
+
+得到的h5文件还可以转为vtp文件格式，这一格式可以用 [ParaView](http://paraview.org/) 查看和保存图像，详见原仓库
+
+```shell
+python h52vtp.py --surf_file path_to_surf_file --surf_name train_loss --zmax 10 --log
+```
