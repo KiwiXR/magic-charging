@@ -4,7 +4,7 @@
 > 
 > https://github.com/tomgoldstein/loss-landscape
 
-[loss-landscape](https://github.com/tomgoldstein/loss-landscape)库是一个上古可视化工具，但是它还算好（neng）用，所以本文试图把它挖出来考古。
+[loss-landscape](https://github.com/tomgoldstein/loss-landscape) 库是一个上古可视化工具，但是它还算好（neng）用，所以本文试图把它挖出来考古。
 
 注意：本文对python包版本的要求与原仓库**和而不同**，版本的选择完全遵循个人美学。
 
