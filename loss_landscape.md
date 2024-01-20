@@ -100,7 +100,7 @@ pip install mpi4py==2.0.0 numpy==1.15.1 h5py==2.7.0 matplotlib==2.0.2 scikit-lea
 
 ## Replicate Examples
 
-本节复现[原仓库](https://github.com/tomgoldstein/loss-landscape)的结果
+本节复现 [原仓库](https://github.com/tomgoldstein/loss-landscape) 的结果
 
 ```shell
 git clone git@github.com:tomgoldstein/loss-landscape.git
@@ -108,7 +108,7 @@ git clone git@github.com:tomgoldstein/loss-landscape.git
 
 
 
-从作者提供的google网盘下载[VGG-9](https://drive.google.com/open?id=1jikD79HGbp6mN1qSGojsXOZEM5VAq3tH)和[ResNet-56](https://drive.google.com/a/cs.umd.edu/file/d/12oxkvfaKcPyyHiOevVNTBzaQ1zAFlNPX/view?usp=sharing)的tar包，放置于 `cifar10/trained_nets` 路径并解压
+从作者提供的google网盘下载 [VGG-9](https://drive.google.com/open?id=1jikD79HGbp6mN1qSGojsXOZEM5VAq3tH) 和 [ResNet-56](https://drive.google.com/a/cs.umd.edu/file/d/12oxkvfaKcPyyHiOevVNTBzaQ1zAFlNPX/view?usp=sharing) 的tar包，放置于 `cifar10/trained_nets` 路径并解压
 
 ```shell
 tar -zxvf vgg9.tar.gz
