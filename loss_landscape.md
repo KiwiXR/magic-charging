@@ -17,7 +17,10 @@
 + numpy=1.15.1
 + h5py=2.7.0
 + matplotlib=2.0.2
-+ scipy=0.19
++ scipy=0.19.1
++ scikit-learn=0.24.2
++ seaborn=0.9.1
++ pandas=1.0.5
 
 ## Setup Steps
 
@@ -83,8 +86,10 @@ mpirun --version
 
 ### 4. 其余依赖
 
+scikit-learn=0.24.2中包含了scipy=0.19.1，[参考](https://pypi.org/project/scikit-learn/0.24.2/)
+
 ```shell
-pip install mpi4py==2.0.0 numpy==1.15.1 h5py==2.7.0 matplotlib==2.0.2 scipy==0.19
+pip install mpi4py==2.0.0 numpy==1.15.1 h5py==2.7.0 matplotlib==2.0.2 scikit-learn==0.24.2 seaborn==0.9.1 pandas==1.0.5
 ```
 
 ## Replicate Examples
@@ -95,4 +100,11 @@ pip install mpi4py==2.0.0 numpy==1.15.1 h5py==2.7.0 matplotlib==2.0.2 scipy==0.1
 git clone git@github.com:tomgoldstein/loss-landscape.git
 ```
 
-从作者提供的google网盘下载VGG-9和ResNet-56的tar包，放置于 `cifar10/trained_nets` 路径
+
+
+从作者提供的google网盘下载VGG-9和ResNet-56的tar包，放置于 `cifar10/trained_nets` 路径并解压
+
+```shell
+tar -zxvf vgg9.tar.gz
+tar -zxvf resnet56.tar.gz
+```
