@@ -142,5 +142,20 @@ mpirun -n 4 python plot_surface.py --mpi --cuda --model vgg9 --x=-1:1:51 \
 + `model_300.t7_weights_xignore=biasbn_xnorm=filter.h5_[-1.0,1.0,51].h5_1d_train_err.pdf` 是可视化文件，可视化了train err
 + `model_300.t7_weights_xignore=biasbn_xnorm=filter.h5_[-1.0,1.0,51].h5_1d_train_loss.pdf` 是可视化文件，可视化了train loss
 
+### Visualizing 2D loss contours
 
+同样可以与上述类似地提取模型文件到新目录进行生成，此处为节省时间直接生成
 
+```shell
+mpirun -n 4 python plot_surface.py --mpi --cuda --model resnet56 --x=-1:1:51 --y=-1:1:51 \
+--model_file cifar10/trained_nets/resnet56_sgd_lr=0.1_bs=128_wd=0.0005/model_300.t7 \
+--dir_type weights --xnorm filter --xignore biasbn --ynorm filter --yignore biasbn --plot
+```
+
+生成的文件中由两个h5文件、四个pdf文件
++ `model_300.t7_weights_xignore=biasbn_xnorm=filter_yignore=biasbn_ynorm=filter.h5` 是direction文件
++ `model_300.t7_weights_xignore=biasbn_xnorm=filter_yignore=biasbn_ynorm=filter.h5_[-1.0,1.0,51]x[-1.0,1.0,51].h5` 是surface文件
++ `model_300.t7_weights_xignore=biasbn_xnorm=filter_yignore=biasbn_ynorm=filter.h5_[-1.0,1.0,51]x[-1.0,1.0,51].h5_train_loss_2dcontour.pdf` 以2D等高线方式可视化
++ `model_300.t7_weights_xignore=biasbn_xnorm=filter_yignore=biasbn_ynorm=filter.h5_[-1.0,1.0,51]x[-1.0,1.0,51].h5_train_loss_2dcontourf.pdf` 以2D填充的等高线方式可视化
++ `model_300.t7_weights_xignore=biasbn_xnorm=filter_yignore=biasbn_ynorm=filter.h5_[-1.0,1.0,51]x[-1.0,1.0,51].h5_train_loss_2dheat.pdf` 以热力图方式可视化
++ `model_300.t7_weights_xignore=biasbn_xnorm=filter_yignore=biasbn_ynorm=filter.h5_[-1.0,1.0,51]x[-1.0,1.0,51].h5_train_loss_3dsurface.pdf` 使用matplotlib实现简单的3D可视化
