@@ -83,3 +83,8 @@ mpiexec --version
 mpirun --version
 ```
 
+### 4. 其余依赖
+
+```shell
+pip install mpi4py==2.0.0 numpy==1.15.1 h5py==2.7.0 matplotlib==2.0.2 scipy==0.19
+```
