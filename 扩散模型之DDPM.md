@@ -1,5 +1,7 @@
 # 扩散模型之DDPM
 
+> 一篇视角相似的论文：[Denoising Diffusion Probabilistic Models in Six Simple Steps](https://arxiv.org/abs/2402.04384)
+
 生成模型包括GAN，VAE，Flow-based和Diffusion等
 
 - GAN将数据生成这一无监督任务建模为一个有监督任务，但是问题在于不稳定的训练和生成结果多样性差
