@@ -1,5 +1,7 @@
 # git clone部分文件
 
+`git version > 2.37'
+
 ```shell
 git sparse-checkout set --no-cone "/*" "!/folder/" "!/path/to/dist/*.map"
 ```
