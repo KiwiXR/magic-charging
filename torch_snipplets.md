@@ -4,6 +4,8 @@
 > [torch follows numpy design](https://pytorch.org/docs/stable/tensor_view.html#:~:text=NOTE-,When,-accessing%20the%20contents)
 > 
 > [numpy advanced indexing](https://docs.scipy.org/doc/numpy-1.10.4/reference/arrays.indexing.html#advanced-indexing)
+>
+> [unsqueeze n times at dim d](https://github.com/pytorch/pytorch/issues/9410#issuecomment-758651563)
 
 ```python
 def index_select_plus(input, index):
