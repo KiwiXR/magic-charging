@@ -12,7 +12,7 @@ def index_select_plus(inputs, index):
   assert inputs.dim() >= index.dim() and inputs.shape[:index.dim()-1] == index.shape[:index.dim()-1]
   index_list = []
   for i, sz in enumerate(index.shape[:-1]):
-    ind_i = unsqueeze_n_times_at_dim(torch.arange(sz, device=inputs.device), n=index.dim()-i-1, dim=-1)
+    ind_i = unsqueeze_n_times_at_dim(torch.arange(sz, device=index.device), n=index.dim()-i-1, dim=-1)
     index_list.append(ind_i)
   index_list.append(index)
   return inputs[index_list]
