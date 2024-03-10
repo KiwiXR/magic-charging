@@ -24,8 +24,9 @@ def unsqueeze_n_times_at_dim(input, n, dim):
     # Negative dim will correspond to unsqueeze() applied at dim = dim + input.dim() + 1.
     dim = dim + input.dim() + 1
   return input[(slice(None),) * dim + (None, ) * n]
-    
+```
 
+```python
 a = torch.randn(10, 11, 12)
 b = torch.randint(0, 11, (10, 5))
 print(index_select_plus(a, b).shape)
