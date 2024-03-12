@@ -12,13 +12,13 @@ print(b)
 # tensor([0.], device='cuda:1')
 ```
 
-这可能是由于显卡间的PCIe线开启了ACS（或IOMMU，未知两者关系）
+这可能是由于显卡间的PCIe线[开启了ACS](https://github.com/pytorch/pytorch/issues/84803#issuecomment-1609549476)（或IOMMU，未知两者关系）
 
 > https://github.com/pytorch/pytorch/issues/84803
 > 
 > https://docs.nvidia.com/deeplearning/nccl/user-guide/docs/troubleshooting.html#pci-access-control-services-acs
 
-一次性关闭ACS的方法为（请确保知道自己在做什么，不知道也至少要看懂nvidia的文档内容）：
+一次性关闭ACS的方法为（**请确保知道自己在做什么**，不知道也至少要看懂[nvidia的文档内容](https://docs.nvidia.com/deeplearning/nccl/user-guide/docs/troubleshooting.html#pci-access-control-services-acs)）：
 
 ```bash
 for BDF in `lspci -d "*:*:*" | awk '{print $1}'`; do
