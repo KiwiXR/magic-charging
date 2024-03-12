@@ -15,6 +15,7 @@ print(b)
 这可能是由于显卡间的PCIe线开启了ACS（或IOMMU，未知两者关系）
 
 > https://github.com/pytorch/pytorch/issues/84803
+> 
 > https://docs.nvidia.com/deeplearning/nccl/user-guide/docs/troubleshooting.html#pci-access-control-services-acs
 
 一次性关闭ACS的方法为（请确保知道自己在做什么，不知道也至少要看懂nvidia的文档内容）：
