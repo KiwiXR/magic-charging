@@ -8,7 +8,7 @@
 > https://github.com/wandb/server/issues/89#issuecomment-1291412131
 
 ```shell
-docker run --rm -d -v /home/wandb-local:/vol -p 8080:8080 --name wandb-local wandb/local
+docker run -d -v /home/wandb-local:/vol -p 8080:8080 --name wandb-local wandb/local
 ```
 其中，
 
