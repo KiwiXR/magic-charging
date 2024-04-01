@@ -11,6 +11,8 @@
 docker run -d -v /home/wandb-local:/vol -p 8080:8080 --name wandb-local wandb/local
 ```
 
+无法通过ServerIP:Port的方式对wandb server进行配置：需要指定访问的HOST
+
 ```shell
 docker run -d -v /home/wandb-local:/vol -p 8080:8080 --name wandb-local -e HOST=http://ServerIP:8080 wandb/local
 ```
