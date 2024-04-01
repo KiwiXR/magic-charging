@@ -10,6 +10,10 @@
 ```shell
 docker run -d -v /home/wandb-local:/vol -p 8080:8080 --name wandb-local wandb/local
 ```
+
+```shell
+docker run -d -v /home/wandb-local:/vol -p 8080:8080 --name wandb-local -e HOST=http://ServerIP:8080 wandb/local
+```
 其中，
 
 `--rm` 表示在docker容器退出（exit）时删除容器，所以在实际部署时**避免使用**！
