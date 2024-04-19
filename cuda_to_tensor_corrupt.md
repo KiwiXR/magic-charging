@@ -18,7 +18,7 @@ print(b)
 > 
 > https://docs.nvidia.com/deeplearning/nccl/user-guide/docs/troubleshooting.html#pci-access-control-services-acs
 
-一次性关闭ACS的方法为（**请确保知道自己在做什么**，不知道也至少要看懂[nvidia的文档内容](https://docs.nvidia.com/deeplearning/nccl/user-guide/docs/troubleshooting.html#pci-access-control-services-acs)）：
+【每次重启后都要操作】一次性关闭ACS的方法为（**请确保知道自己在做什么**，不知道也至少要看懂[nvidia的文档内容](https://docs.nvidia.com/deeplearning/nccl/user-guide/docs/troubleshooting.html#pci-access-control-services-acs)）：
 
 ```bash
 for BDF in `lspci -d "*:*:*" | awk '{print $1}'`; do
