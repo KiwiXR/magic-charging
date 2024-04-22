@@ -2,6 +2,8 @@
 
 # 下载模型
 
+> https://padeoe.com/huggingface-large-models-downloader/#more-813
+>
 > https://huggingface.co/docs/huggingface_hub/guides/download
 
 ```python
