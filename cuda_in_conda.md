@@ -42,15 +42,23 @@ pip install torch==1.11.0+cu113 torchvision==0.12.0+cu113 torchaudio==0.11.0 --e
 
 由于上面已经安装好了 runtime ，所以只要安装对应的 nvcc 编译器，而它又属于 cudatoolkit-dev 包的一部分，因此可以直接通过 conda 安装（依旧以 cuda 11.3 为例）：
 
-#### ⭐NEW: 对于任意cuda版本，使用如下命令进行安装
+⭐New：对于任意cuda版本，使用如下命令进行安装
 
-此包由NVIDIA官方维护，所有cuda版本标签见https://anaconda.org/nvidia/cuda-nvcc
+注意：一个**更加推荐**但体积较大的下载方法是
+
+``` bash
+conda install -c nvidia/label/cuda-11.8.0 cuda-toolkit -y
+```
+
+这种方式能够规避很多单独安装nvcc带来的问题
+
+nvcc包由nvidia官方维护，所有cuda版本标签见https://anaconda.org/nvidia/cuda-nvcc
 
 ```bash
 conda install -c nvidia/label/cuda-11.8.0 cuda-nvcc -y
 ```
 
-#### OLD: 当cuda版本在11.7（含）以下时可以使用如下命令安装，新版本的cudatoolkit-dev不再于conda-forge上提供
+Old：当cuda版本在11.7（含）以下时可以使用如下命令安装，新版本的cudatoolkit-dev不再于conda-forge上提供
 
 ``` bash
 conda install -c conda-forge cudatoolkit-dev=11.3 -y
