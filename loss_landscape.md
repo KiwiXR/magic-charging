@@ -1,6 +1,8 @@
 # loss-landscape从入坑到入土
 
 > Hao Li, Zheng Xu, Gavin Taylor, Christoph Studer and Tom Goldstein. [Visualizing the Loss Landscape of Neural Nets.](https://arxiv.org/abs/1712.09913) NIPS, 2018.
+>
+> Keskar, Nitish Shirish, et al. [On large-batch training for deep learning: Generalization gap and sharp minima.](https://arxiv.org/abs/1609.04836) arXiv preprint arXiv:1609.04836 (2016).
 > 
 > https://github.com/tomgoldstein/loss-landscape
 >
