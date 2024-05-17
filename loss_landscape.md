@@ -3,6 +3,8 @@
 > Hao Li, Zheng Xu, Gavin Taylor, Christoph Studer and Tom Goldstein. [Visualizing the Loss Landscape of Neural Nets.](https://arxiv.org/abs/1712.09913) NIPS, 2018.
 > 
 > https://github.com/tomgoldstein/loss-landscape
+>
+> https://jtuckerk.github.io/loss_landscape.html
 
 ## loss-landscape用途 TL;DR
 
