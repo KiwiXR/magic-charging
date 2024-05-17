@@ -77,6 +77,7 @@ cd /path/to/download
 wget https://download.open-mpi.org/release/open-mpi/v3.1/openmpi-3.1.2.tar.gz
 mkdir ~/openmpi
 cp openmpi-3.1.2.tar.gz ~/openmpi
+cd ~/openmpi
 tar -zxvf openmpi-3.1.2.tar.gz
 cd openmpi-3.1.2/
 ./configure --prefix=$HOME/openmpi
