@@ -75,7 +75,7 @@ sudo docker exec -it pgyvpn /bin/bash
 > bash-5.1# pwd
 > /root
 > ```
-
+直接复制执行
 ```shell
 cd /home
 cat > login.sh <<'EOF'
