@@ -105,11 +105,13 @@ EOF
 nohup sh login.sh 2>&1 &
 ```
 
-可查看局域网中设备
+可查看局域网中所有在线和离线设备，当前设备位于`Online Members`中则为添加成功
 
 ```shell
 pgyvisitor getmbrs -m
 ```
+
+在**蒲公英->管理平台->软件成员->成员列表**中，成员UID/SID下小人为蓝色（光标悬浮时有“登录在线”字样）则为添加成功
 
 `exit`或`ctrl+D`退出容器
 
