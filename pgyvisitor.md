@@ -101,4 +101,10 @@ EOF
 nohup sh login.sh 2>&1 &
 ```
 
+可查看局域网中设备
+
+```shell
+pgyvisitor getmbrs -m
+```
+
 `exit`或`ctrl+D`退出容器
