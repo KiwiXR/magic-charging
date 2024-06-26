@@ -1,5 +1,9 @@
 # Linux服务器使用蒲公英进行组网
 
+## 在蒲公英官网管理平台创建成员
+
+> 参考：https://service.oray.com/question/10258.html 的**1. 创建组网**部分
+
 ## 准备工作
 
 安装docker
