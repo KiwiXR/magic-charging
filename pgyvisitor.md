@@ -108,3 +108,13 @@ pgyvisitor getmbrs -m
 ```
 
 `exit`或`ctrl+D`退出容器
+
+### 容器重启
+
+重启机器或其他问题可能导致容器退出，具体表现为`sudo docker ps -a`显示status为`Exited`，可以通过如下方式重启容器
+
+```shell
+sudo docker start pgyvpn
+```
+
+然后进入容器内启动脚本
