@@ -5,6 +5,8 @@
 > https://padeoe.com/huggingface-large-models-downloader
 >
 > https://huggingface.co/docs/huggingface_hub/guides/download
+>
+> https://hf-mirror.com/
 
 ```python
 from huggingface_hub import snapshot_download
