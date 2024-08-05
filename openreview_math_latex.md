@@ -1,4 +1,4 @@
-# 将正常的latex math转为openreview能接受的math code
+# 将markdown中的latex math转为openreview能接受的math code
 
 Update 0805: File supported tested.
 
