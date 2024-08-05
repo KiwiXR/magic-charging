@@ -1,6 +1,6 @@
 # 将markdown中的latex math转为openreview能接受的math code
 
-Update 0805: File supported tested.
+> Update 0805: File support tested.
 
 保存下方代码为`openreview_latex.py`
 
