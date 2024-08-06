@@ -1,5 +1,9 @@
 # 将markdown中的latex math转为openreview能接受的math code
 
++ TODOs
++ [ ] `{}` 外的字符不用额外转义，进一步减少空间
++ [ ] `$$` 内的情况可能和 `$$$$` 内不太一样，有空研究一下
+
 > Update 0805: File support tested.
 
 保存下方代码为`openreview_latex.py`
