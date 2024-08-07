@@ -8,6 +8,8 @@
 + [ ] `*` 可能也有问题
 
 > Update 0805: File support tested.
+> 
+> Update 0807: Extreme mode.
 
 保存下方代码为`openreview_latex.py`
 
