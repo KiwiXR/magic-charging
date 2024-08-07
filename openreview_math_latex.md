@@ -7,11 +7,9 @@ OpenReview相关信息
 + OpenReview支持的Markdown语法为 [CommonMark](https://commonmark.org/help/) ( [ref](https://docs.openreview.net/how-to-guides/submissions-comments-reviews-and-decisions/how-to-add-formatting-to-reviews-or-comments) )，其 [spec](https://spec.commonmark.org/0.29/)，一个在线试验 [地址](https://spec.commonmark.org/dingus/)
 
 一些现有的经验
-> https://kingsleyxie.cn/markdown-mathjax-conflicts-and-several-solutions/
-> 
-> https://github.com/orgs/community/discussions/65772
-> 
-> https://liam.page/2015/09/09/fix-conflict-between-mathjax-and-markdown/
+> + https://kingsleyxie.cn/markdown-mathjax-conflicts-and-several-solutions/
+> + https://github.com/orgs/community/discussions/65772
+> + https://liam.page/2015/09/09/fix-conflict-between-mathjax-and-markdown/
 
 ## Tool
 
