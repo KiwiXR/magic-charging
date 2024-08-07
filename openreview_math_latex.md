@@ -14,6 +14,16 @@ Thoughts
     > 4\. A single _ character can close emphasis iff it is part of a right-flanking delimiter run and either (a) not part of a left-flanking delimiter run or (b) part of a left-flanking delimiter run followed by punctuation.
     >
     > 9\. Emphasis begins with a delimiter that can open emphasis and ends with a delimiter that can close emphasis, and that uses the same character (_ or *) as the opening delimiter. The opening and closing delimiters must belong to separate delimiter runs. If one of the delimiters can both open and close emphasis, then the sum of the lengths of the delimiter runs containing the opening and closing delimiters must not be a multiple of 3 unless both lengths are multiples of 3.
++ left-flanking delimiter run
+  + 后面不是空格
+  + 以下二选一
+    + 后面不是[punctuation-character](https://spec.commonmark.org/0.29/#punctuation-character)
+    + 后面是[punctuation-character](https://spec.commonmark.org/0.29/#punctuation-character)，而前面是[punctuation-character](https://spec.commonmark.org/0.29/#punctuation-character)或空格
++ right-flanking delimiter run
+  + 前面不是空格
+  + 以下二选一
+    + 前面不是[punctuation-character](https://spec.commonmark.org/0.29/#punctuation-character)
+    + 前面是[punctuation-character](https://spec.commonmark.org/0.29/#punctuation-character)，而后面是[punctuation-character](https://spec.commonmark.org/0.29/#punctuation-character)或空格
 
 一些现有的经验
 > + https://kingsleyxie.cn/markdown-mathjax-conflicts-and-several-solutions/
