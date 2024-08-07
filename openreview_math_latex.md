@@ -8,7 +8,9 @@ OpenReview相关信息
 
 一些现有的经验
 > https://kingsleyxie.cn/markdown-mathjax-conflicts-and-several-solutions/
+> 
 > https://github.com/orgs/community/discussions/65772
+> 
 > https://liam.page/2015/09/09/fix-conflict-between-mathjax-and-markdown/
 
 ## Tool
