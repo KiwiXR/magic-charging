@@ -1,5 +1,12 @@
 # 将markdown中的latex math转为openreview能接受的math code
 
+## Info Bank
+
++ OpenReview采用 [MathJax](https://docs.mathjax.org/en/latest/index.html) 渲染latex公式 ( [ref](https://docs.openreview.net/reference/openreview-tex/openreview-tex-support) )
++ OpenReview支持的Markdown语法为 [CommonMark](https://commonmark.org/help/) ( [ref](https://docs.openreview.net/how-to-guides/submissions-comments-reviews-and-decisions/how-to-add-formatting-to-reviews-or-comments) )，其 [spec](https://spec.commonmark.org/0.29/)，一个在线试验 [地址](https://spec.commonmark.org/dingus/)
+ 
+## Tool
+
 + TODOs
 + [ ] `{}` 外的字符不用额外转义，进一步减少空间
 + [ ] `$$` 内的情况可能和 `$$$$` 内不太一样，有空研究一下
