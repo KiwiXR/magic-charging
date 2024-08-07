@@ -24,7 +24,18 @@ Thoughts
   + 以下二选一
     + 前面不是[punctuation-character](https://spec.commonmark.org/0.29/#punctuation-character)
     + 前面是[punctuation-character](https://spec.commonmark.org/0.29/#punctuation-character)，而后面是[punctuation-character](https://spec.commonmark.org/0.29/#punctuation-character)或空格
-+ 我们考虑仅通过加空格来解决问题（可以的话不引入额外的转义）
+
+我们考虑仅通过加空格来解决问题（可以的话不引入额外的转义），使所有 `_` （除了最后一个）都不满足left-flanking delimiter run的条件
+
+首先，假定我们考虑的 `_` 附近没有空格，则有以下情况（`a` 代表常规字符，`!` 代表[punctuation-character](https://spec.commonmark.org/0.29/#punctuation-character)）：
+```text
+a_a  // 保持不变，CommonMark视其为连字符
+a_!  // 保持不变，不满足left-flanking delimiter run定义
+!_a  // 后面加空格或者前面加转义
+!_!  // 后面加空格或者前面加转义
+```
+
+**注意，本实现暂不考虑Unicode中的punctuation-character**
 
 一些现有的经验
 > + https://kingsleyxie.cn/markdown-mathjax-conflicts-and-several-solutions/
@@ -36,6 +47,7 @@ Thoughts
 + TODOs
 + [ ] `{}` 外的字符不用额外转义，进一步减少空间
 + [ ] `$$` 内的情况可能和 `$$$$` 内不太一样，有空研究一下
++ [ ] `*` 可能也有问题
 
 > Update 0805: File support tested.
 
