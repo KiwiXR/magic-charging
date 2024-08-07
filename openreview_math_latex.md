@@ -156,7 +156,7 @@ Thoughts
     + 前面不是[punctuation-character](https://spec.commonmark.org/0.29/#punctuation-character)
     + 前面是[punctuation-character](https://spec.commonmark.org/0.29/#punctuation-character)，而后面是[punctuation-character](https://spec.commonmark.org/0.29/#punctuation-character)或空格
 
-我们考虑仅通过加空格来解决问题（可以的话不引入额外的转义），使所有 `_` （除了最后一个）都不满足left-flanking delimiter run的条件
+我们考虑仅通过转义来解决问题（可以的话不引入额外的空格），使所有 `_` （除了最后一个）都不满足left-flanking delimiter run的条件
 
 首先，我们考虑 `_` 附近的字符，则有以下情况（`a` 代表常规字符，`!` 代表[punctuation-character](https://spec.commonmark.org/0.29/#punctuation-character), `S` 代表空格）：
 ```text
@@ -170,7 +170,7 @@ S_a  // 后面加空格或者前面加转义
 S_!  // 后面加空格或者前面加转义
 S_S  // 保持不变，后面有空格
 ```
-其次，最后一个 '_' 可以不予考虑
+其次，最后一个 `_` 可以不予考虑
 
 一些现有的经验
 > + https://kingsleyxie.cn/markdown-mathjax-conflicts-and-several-solutions/
