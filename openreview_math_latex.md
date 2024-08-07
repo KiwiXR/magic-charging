@@ -24,6 +24,7 @@ Thoughts
   + 以下二选一
     + 前面不是[punctuation-character](https://spec.commonmark.org/0.29/#punctuation-character)
     + 前面是[punctuation-character](https://spec.commonmark.org/0.29/#punctuation-character)，而后面是[punctuation-character](https://spec.commonmark.org/0.29/#punctuation-character)或空格
++ 我们考虑仅通过加空格来解决问题（可以的话不引入额外的转义）
 
 一些现有的经验
 > + https://kingsleyxie.cn/markdown-mathjax-conflicts-and-several-solutions/
