@@ -6,6 +6,15 @@ OpenReview相关信息
 + OpenReview采用 [MathJax](https://docs.mathjax.org/en/latest/index.html) 渲染latex公式 ( [ref](https://docs.openreview.net/reference/openreview-tex/openreview-tex-support) )
 + OpenReview支持的Markdown语法为 [CommonMark](https://commonmark.org/help/) ( [ref](https://docs.openreview.net/how-to-guides/submissions-comments-reviews-and-decisions/how-to-add-formatting-to-reviews-or-comments) )，其 [spec](https://spec.commonmark.org/0.29/)，一个在线试验 [地址](https://spec.commonmark.org/dingus/)
 
+
+Thoughts
++ `_` 的一种处理办法为，迫使公式内不出现使其配对的 [left-flanking delimiter run](https://spec.commonmark.org/0.29/#left-flanking-delimiter-run) 和 [right-flanking delimiter run](https://spec.commonmark.org/0.29/#right-flanking-delimiter-run)
+    > 2\. A single _ character can open emphasis iff it is part of a left-flanking delimiter run and either (a) not part of a right-flanking delimiter run or (b) part of a right-flanking delimiter run preceded by punctuation.
+    > 
+    > 4\. A single _ character can close emphasis iff it is part of a right-flanking delimiter run and either (a) not part of a left-flanking delimiter run or (b) part of a left-flanking delimiter run followed by punctuation.
+    >
+    > 9\. Emphasis begins with a delimiter that can open emphasis and ends with a delimiter that can close emphasis, and that uses the same character (_ or *) as the opening delimiter. The opening and closing delimiters must belong to separate delimiter runs. If one of the delimiters can both open and close emphasis, then the sum of the lengths of the delimiter runs containing the opening and closing delimiters must not be a multiple of 3 unless both lengths are multiples of 3.
+
 一些现有的经验
 > + https://kingsleyxie.cn/markdown-mathjax-conflicts-and-several-solutions/
 > + https://github.com/orgs/community/discussions/65772
