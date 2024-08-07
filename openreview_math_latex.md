@@ -26,6 +26,8 @@ python openreview_latex.py -x
 从文件/字符串读取（untested）：分别使用`-f FILE`和`-s STRING`参数
 ```shell
 python openreview_latex.py -f test.md
+# or
+python openreview_latex.py -xf test.md
 ```
 
 ```python
