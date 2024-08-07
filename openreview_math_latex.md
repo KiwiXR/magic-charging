@@ -27,12 +27,16 @@ Thoughts
 
 我们考虑仅通过加空格来解决问题（可以的话不引入额外的转义），使所有 `_` （除了最后一个）都不满足left-flanking delimiter run的条件
 
-首先，假定我们考虑的 `_` 附近没有空格，则有以下情况（`a` 代表常规字符，`!` 代表[punctuation-character](https://spec.commonmark.org/0.29/#punctuation-character)）：
+首先，我们考虑 `_` 附近的字符，则有以下情况（`a` 代表常规字符，`!` 代表[punctuation-character](https://spec.commonmark.org/0.29/#punctuation-character), `S` 代表空格）：
 ```text
 a_a  // 保持不变，CommonMark视其为连字符
 a_!  // 保持不变，不满足left-flanking delimiter run定义
 !_a  // 后面加空格或者前面加转义
 !_!  // 后面加空格或者前面加转义
+a_S  // 保持不变，后面有空格
+!_S  // 保持不变，后面有空格
+S_a  // 后面加空格或者前面加转义
+S_!  // 后面加空格或者前面加转义
 ```
 
 **注意，本实现暂不考虑Unicode中的punctuation-character**
