@@ -10,7 +10,7 @@
 - Diffusion来源于非平衡热力学
 - 与VAE和Flow-based不同，Diffusion通过一个固定的precedure学习（相较于Flow-based）并且中间变量具有高维度（应该是和VAE比较，Flow-based应该是不降维的？是不降维的）
 
-[正态分布的性质](https://www.chforce.com/books/statistical-thinking/di_6_zhang_fen_bu_de_yun_suan/65_zheng_tai_fen_bu_de_xing_zhi.html)
+[正态分布的性质](https://jobrest.gitbooks.io/statistical-thinking/content/di_6_zhang_fen_bu_de_yun_suan/65_zheng_tai_fen_bu_de_xing_zhi.html)
 
 ![DDPM](https://lilianweng.github.io/posts/2021-07-11-diffusion-models/DDPM.png)
 
