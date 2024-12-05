@@ -1,4 +1,4 @@
-# 迁移conda环境
+# 迁移/创建conda环境
 
 - [通用（亦适用于不同平台和操作系统）【使用conda-env】](#通用亦适用于不同平台和操作系统使用conda-env)
 - [相同操作系统【使用conda core】](#相同操作系统使用conda-core)
