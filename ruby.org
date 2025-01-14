@@ -49,7 +49,7 @@ We can see that the argument is passed in without respect to the "name".
 
 In this case, b takes the argument value:
 
-#+BEGIN_SRC ruby :results output
+#+BEGIN_SRC ruby :results output :exports both
   def foo(a=1, b)
     p "a=#{a}, b=#{b}"
   end
