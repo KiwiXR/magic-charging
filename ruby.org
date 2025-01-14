@@ -1,0 +1,61 @@
+#+title: Notes for Ruby
+#+author: Mingjia Li
+* Learning Ruby
+** Positional vs Keyword Arguments
+
+Positional Arguments seems much alike Keyword Arguments, but they are DIFFERENT!
+While we can use call methods like =foo(a=1)= or =foo(a:1)=, the previous actually *defines a LOCAL variable and returns the value of this assignment expression*, the latter is actually doing the expected thing. Also, as indicated by its name, Positional Arguments are only matched by their positions (but can be flexible when skipping arguments with default values, i.e., the required argument has higher priority if less values than arguments are passed in).
+
+*** Positional Arguments vs Keyword Arguments: they can be alike:
+
+#+BEGIN_SRC ruby :results output
+  def foo(a, b=1)
+    p "a=#{a}, b=#{b}"
+  end
+
+  foo(2)
+
+  def bar(a:, b:1)
+    p "a=#{a}, b=#{b}"
+  end
+
+  bar(a:2)
+#+END_SRC
+
+#+RESULTS:
+: "a=2, b=1"
+: "a=2, b=1"
+
+*** Positional Arguments can take "named" arguments, but they are not real names
+
+#+BEGIN_SRC ruby :results output
+  def foo(a=1)
+    p "a=#{a}"
+  end
+
+  foo(a=2)
+  foo(x=2)
+  foo(wtf=2)
+#+END_SRC
+
+#+RESULTS:
+: "a=2"
+: "a=2"
+: "a=2"
+
+We can see that the argument is passed in without respect to the "name".
+
+*** The Positional Arguments group without default values have higher priorities
+
+In this case, b takes the argument value:
+
+#+BEGIN_SRC ruby :results output
+  def foo(a=1, b)
+    p "a=#{a}, b=#{b}"
+  end
+
+  foo(2)
+#+END_SRC
+
+#+RESULTS:
+: "a=1, b=2"
