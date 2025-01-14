@@ -68,3 +68,71 @@ We can see that the argument is passed in without respect to the "name".
 #+RESULTS:
 : "a=1, b=2"
 : "a=2, b=1"
+
+** Accessor
+
+*** Define with Methods
+
+The accessor of a class instance can be defined by a pair of methods:
+
+#+BEGIN_SRC ruby :exports both
+  class C
+    def name
+      @name
+    end
+
+    def name=(val)
+      @name = val
+    end
+  end
+
+  c = C.new
+  p c.name
+  c.name = 'kiwi'
+  p c.name
+#+END_SRC
+
+#+RESULTS:
+: nil
+: "kiwi"
+
+*** Define with Symbols
+
+The accessor
+
+#+BEGIN_SRC ruby :exports both
+  class C
+    attr_accessor :name
+    attr_reader :reader
+    attr_writer :writer
+
+    def greet
+      p "Hi, call me #{name}"
+      p "Hi, also call me with #{self.name}"
+      p "Hi, still callable with #{@name}"
+    end
+
+    def assign(val)
+      name = val
+      p "Call me #{self.name}?"
+      self.name = val
+      p "Call me #{self.name}!"
+    end
+  end
+
+  c = C.new
+  p c.name
+  c.name = "test"
+  p c.name
+  c.assign('kiwi')
+  c.greet
+#+END_SRC
+
+#+RESULTS:
+: nil
+: "test"
+: "Call me test?"
+: "Call me kiwi!"
+: "Hi, call me kiwi"
+: "Hi, also call me with kiwi"
+: "Hi, still callable with kiwi"
