@@ -54,15 +54,17 @@ We can see that the argument is passed in without respect to the "name".
 
 *** The Positional Arguments group without default values have higher priorities
 
-In this case, b takes the argument value:
-
 #+BEGIN_SRC ruby :exports both
   def foo(a=1, b)
     p "a=#{a}, b=#{b}"
   end
 
+  # In this case, b takes the argument value
   foo(2)
+  # While in this case, the values are accepted sequentially
+  foo(2, 1)
 #+END_SRC
 
 #+RESULTS:
 : "a=1, b=2"
+: "a=2, b=1"
