@@ -5,6 +5,8 @@
 :header-args: :results output :exports both
 :END:
 
+PS: =:exports both= cascade apply does not work for github, so we have to manually do it.
+
 ** Positional vs Keyword Arguments
 
 
@@ -33,7 +35,7 @@ While we can use call methods like =foo(a=1)= or =foo(a:1)=, the previous actual
 
 *** Positional Arguments can take "named" arguments, but they are not real names
 
-#+BEGIN_SRC ruby
+#+BEGIN_SRC ruby :exports both
   def foo(a=1)
     p "a=#{a}"
   end
@@ -54,7 +56,7 @@ We can see that the argument is passed in without respect to the "name".
 
 In this case, b takes the argument value:
 
-#+BEGIN_SRC ruby
+#+BEGIN_SRC ruby :exports both
   def foo(a=1, b)
     p "a=#{a}, b=#{b}"
   end
