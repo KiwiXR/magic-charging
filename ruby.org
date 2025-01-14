@@ -13,7 +13,7 @@ While we can use call methods like =foo(a=1)= or =foo(a:1)=, the previous actual
 
 *** Positional Arguments vs Keyword Arguments: they can be alike:
 
-#+BEGIN_SRC ruby
+#+BEGIN_SRC ruby :exports both
   def foo(a, b=1)
     p "a=#{a}, b=#{b}"
   end
