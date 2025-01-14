@@ -2,7 +2,7 @@
 #+author: Mingjia Li
 * Learning Ruby
 :PROPERTIES:
-:header-args: :results output :export both
+:header-args: :results output :exports both
 :END:
 
 ** Positional vs Keyword Arguments
