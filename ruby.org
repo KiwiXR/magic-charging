@@ -260,7 +260,7 @@ and will get shifted into the singleton class of the result of the expression.
 : "hi3"
 : "hi4"
 
-** Class Variable vs Instance Variable on Class
+** Class Variable vs Class Instance Variable
 
 [[https://www.ruby-lang.org/en/documentation/faq/8/][ref1]]
 
