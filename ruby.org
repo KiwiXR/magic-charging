@@ -259,3 +259,147 @@ and will get shifted into the singleton class of the result of the expression.
 : "hi2"
 : "hi3"
 : "hi4"
+
+** Class Variable vs Instance Variable on Class
+
+[[https://www.ruby-lang.org/en/documentation/faq/8/][ref1]]
+
+[[https://stackoverflow.com/a/15773671][ref2]]
+
+Class Variable is shared through inheritance, while Instance Variable on class is independent
+
+Instance Variable on class (Class Instance Variable) is actually a variable in the class object, which is the /instance variable/ of its superclass. Therefore, an =attr_accessor= of its *singleton class can be used to simplify its external access.
+
+#+BEGIN_SRC ruby :exports both
+  class Foo
+    @count = 0
+
+    class << self
+      attr_accessor :count
+    end
+
+    def self.count
+      @count
+    end
+
+    def count
+      self.class.count
+    end
+  end
+
+  class Bar < Foo
+    attr_accessor :count
+  end
+
+  Foo.count += 1  # self.singleton_class.count=
+  p Foo.count  # self.count
+  p Foo.new.count  # count
+
+  p Bar.count
+  p Bar.new.count
+
+  puts "inherited instance"
+
+  bar = Bar.new
+  bar.count = 100
+  p Foo.count
+  p Bar.count
+  p Bar.new.count
+  p bar.count
+
+  puts "inherited class"
+
+  Bar.count = 200
+  p Foo.count
+  p Bar.count
+  p Bar.new.count
+  p bar.count
+#+END_SRC
+
+#+RESULTS:
+#+begin_example
+1
+1
+nil
+nil
+inherited instance
+1
+nil
+nil
+100
+inherited class
+1
+200
+nil
+100
+#+end_example
+
+For Class Variables, the changes are shared among class inheritance
+
+#+BEGIN_SRC ruby :exports both
+  class Foo
+    @@count = 1
+
+    def self.count
+      @@count
+    end
+
+    def self.count=(val)
+      @@count = val
+    end
+
+    def count
+      @@count
+    end
+
+  end
+
+  class Bar < Foo
+    def count
+      @@count
+    end
+
+    def count=(val)
+      @@count = val
+    end
+  end
+
+  p Foo.count
+  p Bar.count
+  p Foo.new.count
+  p Bar.new.count
+
+  puts "class level change"
+
+  Foo.count += 1
+  p Foo.count
+  p Bar.count
+  p Foo.new.count
+  p Bar.new.count
+
+  puts "instance level change"
+
+  Bar.new.count += 1
+  p Foo.count
+  p Bar.count
+  p Foo.new.count
+  p Bar.new.count
+#+END_SRC
+
+#+RESULTS:
+#+begin_example
+1
+1
+1
+1
+class level change
+2
+2
+2
+2
+instance level change
+3
+3
+3
+3
+#+end_example
