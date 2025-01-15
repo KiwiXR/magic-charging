@@ -136,3 +136,126 @@ The accessor
 : "Hi, call me kiwi"
 : "Hi, also call me with kiwi"
 : "Hi, still callable with kiwi"
+
+** Singleton Class/Method
+
+Singleton Class is the class that binds to every single *Object*, NOTE that each CLASS is also an *Object*!
+
+*** Class is Object
+
+#+BEGIN_SRC ruby :exports both
+  class Foo; end
+
+  p Foo.class
+  p Foo.is_a?(Object)
+#+END_SRC
+
+#+RESULTS:
+: Class
+: true
+
+*** Singleton Class Comes with Each Object
+
+#+BEGIN_SRC ruby :exports both
+  class Foo; end
+
+  p Foo.singleton_class
+
+  p String.singleton_class
+
+  p Foo.new.singleton_class
+
+  p String.new.singleton_class
+#+END_SRC
+
+#+RESULTS:
+: #<Class:Foo>
+: #<Class:String>
+: #<Class:#<Foo:0x0000018f40af2898>>
+: #<Class:#<String:0x0000018f40af2708>>
+
+*** A =class <<= Syntax Opens Up the Singleton Class of an Object
+
+[[https://stackoverflow.com/a/6852104][source]]
+#+BEGIN_QUOTE
+the =class << self= (or any object in place of self) construct is truly different. It is really a builtin feature of the language itself, in CRuby it's defined in parse.y as
+
+=k_class tLSHFT expr=
+
+=k_class= is the 'class' keyword, where =tLSHFT= is a '<<' token and expr is an arbitrary expression. That is, you can actually write
+
+=class << <any expression>=
+
+and will get shifted into the singleton class of the result of the expression.
+#+END_QUOTE
+
+
+
+#+BEGIN_SRC ruby :exports both
+  class Foo
+    class << self
+      def hi; "hi" end
+    end
+  end
+
+  p Foo.class
+  p Foo.singleton_class
+  p Foo.singleton_methods(false)
+  p Foo.methods(false)
+
+  foo = Foo.new
+
+  class << foo
+    def me; "me" end
+  end
+
+  p foo.class
+  p foo.singleton_class
+  p foo.singleton_methods(false)
+  p foo.methods(false)
+#+END_SRC
+
+#+RESULTS:
+: Class
+: #<Class:Foo>
+: [:hi]
+: [:hi]
+: Foo
+: #<Class:#<Foo:0x0000028979d71c98>>
+: [:me]
+: [:me]
+
+*** Alternatively, Singleton Methods can also be defined in "class method" style or so
+
+#+BEGIN_SRC ruby :exports both
+  class Foo; end
+
+  class << Foo
+    def hi1; "hi1" end
+  end
+
+  class Foo
+    def self.hi2
+      "hi2"
+    end
+  end
+
+  class Foo
+    def Foo.hi3
+      "hi3"
+    end
+  end
+
+  def Foo.hi4; "hi4" end
+
+  p Foo.hi1
+  p Foo.hi2
+  p Foo.hi3
+  p Foo.hi4
+#+END_SRC
+
+#+RESULTS:
+: "hi1"
+: "hi2"
+: "hi3"
+: "hi4"
