@@ -1,5 +1,4 @@
-# 问道妈耶，那我问你
-
+# 问道妈耶，我告诉你
 ```python
 import sys
 import zipfile
@@ -9,7 +8,7 @@ from PIL import Image
 import xml.etree.ElementTree as ET
 from cairosvg import svg2png
 
-delete_unused = False  # 是否删除未使用的图片
+delete_unused = True  # 是否删除未使用的图片
 docx_name = '6.5 最终科技报告'
 zip_file = zipfile.ZipFile(docx_name+'.docx', 'r')
 output_dir = os.path.normpath(f"./{docx_name}")
@@ -202,7 +201,7 @@ if os.path.exists(media_dir):
             # 转换文件为 JPEG 或 PNG
             new_file_path = convert_to_jpeg_or_png(file_path)
             # 现在后缀应该是 jpeg
-            compress_image(new_file_path, target_size=64, step=10, quality=85)
+            compress_image(new_file_path, target_size=128, step=10, quality=85)
             if new_file_path:
                 new_file_name = os.path.basename(new_file_path)
                 # 更新 rels 文件
@@ -213,9 +212,9 @@ if os.path.exists(media_dir):
                 os.remove(file_path)
             continue
         if file_ext in ["png"]:
-            compress_image(file_path, target_size=64, step=10, quality=85)
+            compress_image(file_path, target_size=128, step=10, quality=85)
         elif file_ext in ["jpg", "jpeg"]:
-            compress_image(file_path, target_size=64, step=10, quality=90)
+            compress_image(file_path, target_size=128, step=10, quality=85)
         else:
             print(f"不支持的文件格式: {file_name} 后缀 {file_ext}，已跳过")
             continue
