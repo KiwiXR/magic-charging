@@ -18,7 +18,9 @@ sudo pacman -Sy archlinux-keyring && sudo pacman -Su
 ```
 
 更新提示community.db failed to download：
+
 https://bbs.archlinux.org/viewtopic.php?id=303841
+
 https://archlinux.org/news/cleaning-up-old-repositories/
 
 如同时使用archlinuxcn，还需要更新其keyring，然后再次执行 `sudo pacman -Su` [ref](https://github.com/archlinuxcn/repo/blob/master/README.md)
